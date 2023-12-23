@@ -14,9 +14,10 @@ class test_state(test_basemodel):
         self.name = "State"
         self.value = State
 
-    def test_name3(self):
-        """ """
-        new = self.value()
-        self.assertEqual(type(new.name), str if
-                         os.getenv('HBNB_TYPE_STORAGE') != 'db' else
-                         type(None))
+    def test_create_state(self):
+        """Test if create State command adds a new record in the table states"""
+        initial_count = len(self.value.all())  # Get the initial count of records
+        new_state = self.value(name="California")  # Execute the create State command
+        final_count = len(self.value.all())  # Get the final count of records
+        self.assertEqual(final_count, initial_count + 1)  # Check if the difference is +1
+        

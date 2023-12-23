@@ -124,8 +124,20 @@ class HBNBCommand(cmd.Cmd):
         if type(params) != dict:
             return
         try:
-            new_instance = HBNBCommand.classes[args.split()[0]](**params)
-            # [setattr(new_instance, k, v) for k, v in params.items()]
+            class_name, *params_list = args.split()
+            new_instance = HBNBCommand.classes[class_name]()
+            for param in params_list:
+                key, value = param.split('=')
+                if value[0] == '"' and value[-1] == '"':
+                    value = value.replace('_', ' ').strip('"')
+                elif value.isnumeric():
+                    value = int(value)
+                else:
+                    try:
+                        value = float(value)
+                    except Exception:
+                        pass
+                setattr(new_instance, key, value)
             new_instance.save()
             print(new_instance.id)
         except Exception:
