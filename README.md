@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <center> <h1>HBNB - The Console</h1> </center>
 
 This repository contains the initial stage of a student project to build a clone of the AirBnB website. This stage implements a backend interface, or console, to manage program data. Console commands allow the user to create, update, and destroy objects, as well as manage file storage. Using a system of JSON serialization/deserialization, storage is persistent between sessions.
@@ -140,3 +141,13 @@ Usage: <class_name>.update(<_id>, <dictionary>)
 (hbnb) ["[User] (98bea5de-9cb0-4d78-8a9d-c4de03521c30) {'updated_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134362), 'name': 'Fred the Frog', 'age': 9, 'id': '98bea5de-9cb0-4d78-8a9d-c4de03521c30', 'created_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134343)}"]
 ```
 <br>
+=======
+we will implment and code ,program the my sql database for our project and so working in the airbnb clone project to gain the ex[erince and so 
+
+
+
+
+                             keeep It UP
+   codeing for life codeing forever coding is the only way to get money for my kids and to gain the experince i need to make their future more good and great and make them learn goodd eat gooodd 
+   Lets beging our journey we created b4 in the v1 the storage cmdlet in storage engine with python here we are gone transform what we did into a working sql database tables forming the curd 
+>>>>>>> bba06fc45b17fc36c6d948c4d322dea98c3e6a01
