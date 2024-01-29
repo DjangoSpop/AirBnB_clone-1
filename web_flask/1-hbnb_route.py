@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 from flask import Flask
+"""
+here we gone route the url to navigate to /hbnb explaining how routing in web sites into many files 
 
+"""
 
 app = Flask(__name__)
 
