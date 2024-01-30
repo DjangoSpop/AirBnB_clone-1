@@ -1,60 +1,30 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
-""" holds class User"""
-import models
-from models.base_model import BaseModel, Base
-from os import getenv
-import sqlalchemy
-=======
-
-"""
-A module that defines the ORM class for User table
-"""
-from os import getenv
-from models.base_model import Base, BaseModel
->>>>>>> bba06fc45b17fc36c6d948c4d322dea98c3e6a01
-from sqlalchemy import Column, String
+"""Defines the User class."""
+from models.base_model import Base
+from models.base_model import BaseModel
+from sqlalchemy import Column
+from sqlalchemy import String
 from sqlalchemy.orm import relationship
 
 
 class User(BaseModel, Base):
-<<<<<<< HEAD
-    """Representation of a user """
-    if models.storage_t == 'db':
-        __tablename__ = 'users'
-=======
-    """
-    Defines attributes for User table
-    """
-    __tablename__ = 'users'
+    """Represents a user for a MySQL database.
 
-    if getenv('HBNB_TYPE_STORAGE') == 'db':
->>>>>>> bba06fc45b17fc36c6d948c4d322dea98c3e6a01
-        email = Column(String(128), nullable=False)
-        password = Column(String(128), nullable=False)
-        first_name = Column(String(128), nullable=True)
-        last_name = Column(String(128), nullable=True)
-<<<<<<< HEAD
-        places = relationship("Place", backref="user")
-        reviews = relationship("Review", backref="user")
-    else:
-        email = ""
-        password = ""
-        first_name = ""
-        last_name = ""
+    Inherits from SQLAlchemy Base and links to the MySQL table users.
 
-    def __init__(self, *args, **kwargs):
-        """initializes user"""
-        super().__init__(*args, **kwargs)
-=======
-        places = relationship(
-            'Place', backref='user', cascade='all, delete')
-        reviews = relationship(
-            'Review', backref='user', cascade='all, delete')
-        
-    else:
-        email = ''
-        password = ''
-        first_name = ''
-        last_name = ''
->>>>>>> bba06fc45b17fc36c6d948c4d322dea98c3e6a01
+    Attributes:
+        __tablename__ (str): The name of the MySQL table to store users.
+        email: (sqlalchemy String): The user's email address.
+        password (sqlalchemy String): The user's password.
+        first_name (sqlalchemy String): The user's first name.
+        last_name (sqlalchemy String): The user's last name.
+        places (sqlalchemy relationship): The User-Place relationship.
+        reviews (sqlalchemy relationship): The User-Review relationship.
+    """
+    __tablename__ = "users"
+    email = Column(String(128), nullable=False)
+    password = Column(String(128), nullable=False)
+    first_name = Column(String(128))
+    last_name = Column(String(128))
+    places = relationship("Place", backref="user", cascade="delete")
+    reviews = relationship("Review", backref="user", cascade="delete")
