@@ -22,7 +22,7 @@ class DBStorage:
         __engine (sqlalchemy.Engine): The working SQLAlchemy engine.
         __session (sqlalchemy.Session): The working SQLAlchemy session.
     """
-
+    
     __engine = None
     __session = None
 

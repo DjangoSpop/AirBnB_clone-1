@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
 """
 Contains class BaseModel
 """
@@ -74,7 +73,7 @@ class BaseModel:
     def delete(self):
         """delete the current instance from the storage"""
         models.storage.delete(self)
-=======
+
 
 """
 This module defines the base class inherited by all other ORM classes
@@ -138,4 +137,4 @@ class BaseModel:
         attributes.pop('_sa_instance_state', None)
         cls = (str(type(self)).split('.')[-1]).split('\'')[0]
         return '[{}] ({}) {}'.format(cls, self.id, attributes)
->>>>>>> bba06fc45b17fc36c6d948c4d322dea98c3e6a01
+
